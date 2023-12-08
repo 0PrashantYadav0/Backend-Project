@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    *{
+  background-color: rgb(159, 245, 245);
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+table{
+  border: 2px solid black;
+}
+thead th{
+  font-size: 1.4rem;
+}
+th{
+  border: 1px solid black;
+}
+.table{
+  display: flex;
+  justify-content: center;
+}
+.button1{
+  border: none;
+  background-color: rgb(220, 45, 45);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 4px;
+}
+a{
+  text-decoration: none;
+  background: transparent;
+  color: white;
+}
+.button2{
+  border: none;
+  background-color: rgb(4, 87, 50);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 4px;
+}
+  </style>
+</head>
+<body>
+  <h1>All user info</h1>
+  <div class="table">
+    <table>
+      <thead>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+      </thead>
+      <tbody>
+        <% for(userinfo of result){ %>
+          <tr>
+            <th>
+              <%= userinfo.id %>
+            </th>
+            <th>
+              <%= userinfo.username %>
+            </th>
+            <th>
+              <%= userinfo.email%>
+            </th>
+            <th>
+              <button class="button1">
+                <a href="/user/<%= userinfo.id %>/check">
+                  Delete
+                </a>
+              </button>
+            </th>
+            <th>
+              <button class="button2">
+                <a href="/user/<%= userinfo.id %>/check">
+                  EDIT
+                </a>
+              </button>
+            </th>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+  </div>
+</body>
+</html>
