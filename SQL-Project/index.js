@@ -27,7 +27,7 @@ const connection = mysql.createConnection({
 
 //getting the count of user in server
 app.get("/", (req, res) => {
-  let q = `SELECT count(*) FROM user`;
+  let q = `SELECT count(*) FROM user;`;
   try{
     connection.query(q, (err,result) => {
       
